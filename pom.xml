@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>demo</groupId>
+  <artifactId>zssapp.zats</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>zats Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <repositories>
+  	<repository>
+		<id>ZK CE</id>
+		<name>ZK CE Repository</name>
+		<url>http://mavensync.zkoss.org/maven2</url>
+	</repository>
+	<repository>
+		<id>ZK Evaluation Repository</id>
+		<url>http://mavensync.zkoss.org/eval/</url>
+	</repository>
+  </repositories>
+  <dependencies>
+    <dependency>
+		<groupId>org.zkoss.zk</groupId>
+		<artifactId>zkplus</artifactId>
+		<version>5.0.11</version>
+	</dependency>
+  	<dependency>
+		<groupId>org.zkoss.zss</groupId>
+		<artifactId>zss</artifactId>
+		<version>2.3.0</version>
+	</dependency>
+	<dependency>
+		<groupId>org.zkoss.zss</groupId>
+		<artifactId>zssex</artifactId>
+		<version>2.3.0</version>
+	</dependency>
+	<dependency>
+		<groupId>org.zkoss.theme</groupId>
+		<artifactId>breeze</artifactId>
+		<version>5.0.11</version>
+	</dependency>
+	<dependency>
+		<groupId>org.zkoss.zats</groupId>
+		<artifactId>zats-mimic</artifactId>
+		<version>1.0.0</version>
+		<scope>test</scope>
+	</dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.10</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <finalName>zssapp.zats</finalName>
+  </build>
+</project>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="zssapp.zats">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources/java"/>
+        <dependent-module archiveName="zkplus-5.0.11.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/zkplus/zkplus">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/zssapp.zats/target/classes"/>
+        <property name="context-root" value="zssapp.zats"/>
+    </wb-module>
+</project-modules>
