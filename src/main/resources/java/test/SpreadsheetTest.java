@@ -27,6 +27,8 @@ import org.zkoss.zats.mimic.ComponentAgent;
 import org.zkoss.zats.mimic.DesktopAgent;
 import org.zkoss.zats.mimic.Zats;
 import org.zkoss.zats.mimic.impl.OperationAgentManager;
+import org.zkoss.zss.model.Worksheet;
+import org.zkoss.zss.model.impl.SheetCtrl;
 import org.zkoss.zss.ui.Spreadsheet;
 import org.zkoss.zul.Window;
 
@@ -97,5 +99,19 @@ public class SpreadsheetTest {
 		Assert.assertEquals(Cell.CELL_TYPE_FORMULA, cell.getCellType());
 		Assert.assertEquals(Cell.CELL_TYPE_NUMERIC, cell.getCachedFormulaResultType());
 		Assert.assertEquals(Double.valueOf(3.1415), cell.getNumericCellValue());
+	}
+	
+	@Test
+	public void selectSheet() {
+		DesktopAgent desktop = Zats.newClient().connect("/index.zul");
+		SpreadsheetAgent spreadsheetAgent = desktop.query("spreadsheet").as(SpreadsheetAgent.class);
+		
+		Spreadsheet spreadsheet = spreadsheetAgent.getSpreadsheet();
+		Worksheet sheet = spreadsheet.getSheet(1);//index start from 0
+		Assert.assertNotSame(spreadsheet.getSelectedSheet(), sheet);
+		
+		spreadsheetAgent.postSelectSheetCommand(((SheetCtrl)sheet).getUuid());
+		
+		Assert.assertEquals(spreadsheet.getSelectedSheet(), sheet);
 	}
 }
